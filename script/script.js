@@ -1,3 +1,9 @@
+
+const userName = localStorage.getItem('learnerName');
+if (userName) {
+    document.getElementById('user-display').innerText = userName;
+}
+
 const createElements = (arr)=>{
     // console.log(arr);
     const htmlElements = arr.map(el => `<span class = "btn">${el}</span>`);
@@ -194,3 +200,4 @@ document.getElementById("btn-search").addEventListener("click" ,() =>{
     });
     
 });
+
