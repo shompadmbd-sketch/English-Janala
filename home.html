@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Janala | Best Platform for learning English</title>
+    <!-- css link -->
+     <link rel="stylesheet" href="./style.css">
+    <!-- title and logo -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind + daisyui -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- font integration-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="navbar max-w-7xl mx-auto px-4">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bangla">
+                        <li><a href="#"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                        <li><button onclick="logout()" class="text-error"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button></li>
+                    </ul>
+                </div>
+                <a href="#" class="flex items-center gap-2">
+                    <img class="w-8 h-8" src="./assets/logo.png" alt="Logo">
+                    <span class="text-xl font-bold hidden sm:inline">English <span class="font-bangla text-[#422AD5]">জানালা</span></span>
+                </a>
+            </div>
+
+            <div class="navbar-end flex items-center gap-4">
+                <div class="hidden lg:flex gap-2">
+                    <a href="#" class="btn btn-ghost btn-sm font-bangla">FAQ</a>
+                    <a href="#" class="btn btn-ghost btn-sm font-bangla text-[#422AD5]">Learn</a>
+                </div>
+                <div class="flex items-center gap-3 bg-gray-100 px-3 py-1.5 rounded-full border">
+                    <span id="user-display" class="text-sm font-semibold text-gray-700 italic">Learner</span>
+                    <button onclick="logout()" class="hidden sm:flex btn btn-circle btn-xs btn-error btn-outline">
+                        <i class="fa-solid fa-power-off"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4">
+        <section id="hero-section" class="flex flex-col-reverse md:flex-row gap-10 justify-between items-center py-12">
+            <div class="flex-1 text-center md:text-left space-y-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                    <span class="text-sky-500">English</span> is Easy!!
+                </h2>
+                <p class="font-bangla text-lg text-gray-600 leading-relaxed max-w-lg">
+                    আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ।
+                </p>
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <div class="p-4 bg-[#422AD5]/10 border border-[#422AD5]/20 rounded-xl w-full max-w-xs">
+                        <p class="font-bangla text-[#422AD5]">চলুন নতুন কিছু শব্দ শিখি!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center md:justify-end">
+                <img class="w-full max-w-sm drop-shadow-2xl animate-pulse-slow" src="./assets/hero-student.png" alt="Student">
+            </div>
+        </section>
+
+        <section class="py-10 bg-white rounded-3xl shadow-xl px-6 mb-12 border border-gray-100">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                <span class="text-sky-400">Let's</span> Learn Vocabulary
+            </h2>
+
+            <div id="level-container" class="flex flex-wrap gap-3 justify-center mb-10">
+                </div>
+
+            <div class="flex justify-center">
+                <div class="join w-full max-w-md shadow-lg">
+                    <input id="input-search" type="text" placeholder="Search vocabulary..." class="input input-bordered join-item w-full focus:border-[#422AD5]" />
+                    <button id="btn-search" class="btn bg-[#422AD5] text-white join-item border-none hover:bg-blue-800">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div id="spinner" class="flex justify-center items-center py-20 hidden">
+            <span class="loading loading-bars loading-lg text-[#422AD5]"></span>
+        </div>
+
+        <section id="word-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+            <div class="text-center bg-blue-50 col-span-full rounded-2xl py-16 space-y-4 border-2 border-dashed border-blue-200">
+                <i class="fa-solid fa-hand-pointer text-4xl text-blue-300"></i>
+                <p class="text-xl font-medium text-gray-500 font-bangla">আপনি এখনো কোন Lesson Select করেন নি</p>
+                <h2 class="font-bold text-2xl text-[#422AD5] font-bangla">একটি Lesson Select করুন।</h2>
+            </div>
+        </section>
+        <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box border-t-8 border-[#422AD5]">
+            <div id="details-container" class="space-y-4">
+                </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn btn-neutral font-bangla">বন্ধ করুন</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+    </main>
+
+
+    <script src="./script/script.js"></script>
+    
+</body>
+</html>
